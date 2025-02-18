@@ -8,7 +8,7 @@ import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between items-center px-6 py-2 fixed w-full bg-white">
+    <div className="flex justify-between items-center px-6 py-2 fixed z-999 w-full bg-white">
       {/* Left */}
       <div className="flex gap-4 text-3xl items-center">
         <span className="cursor-pointer">
