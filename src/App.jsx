@@ -1,13 +1,18 @@
+import { Route, Routes } from "react-router";
 import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
+import Home from "./components/Home";
+import Search from "./components/Search";
+import PlayingVideo from "./components/PlayingVideo";
 
 const App = () => {
   return (
     <div>
       <Navbar />
-      <main>
-        <div className="w-1/6 pl-6"><Sidebar/></div>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/search/:searchQuery" element={<Search />} />
+        <Route path="/playVideo/:id" element={<PlayingVideo />} />
+      </Routes>
     </div>
   );
 };

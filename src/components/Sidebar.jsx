@@ -4,7 +4,7 @@ import { MdSubscriptions } from "react-icons/md";
 
 const Sidebar = () => {
   return (
-    <div className="pt-32 bg-gray-300 px-6">
+    <div className="pt-4 bg-gray-300 px-6">
       <div className="mb-4 text-xm font-medium border-b pb-2">
         <div className="flex items-center gap-2">
           <GoHomeFill />
@@ -40,6 +40,14 @@ const Sidebar = () => {
 
       <div className="border-b pb-2 flex flex-col gap-2 font-semibold mt-8">
         <h1 className="text-2xl font-semibold">Explore</h1>
+        <span>Explore</span>
+        <span>Music</span>
+        <span>Gaming</span>
+        <span>Sports</span>
+      </div>
+
+      <div className="border-b pb-2 flex flex-col gap-2 font-semibold mt-8 text-red-900">
+        <h1 className="text-2xl font-semibold text-black">More From Youtube</h1>
         <span>Explore</span>
         <span>Music</span>
         <span>Gaming</span>
