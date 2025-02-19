@@ -5,6 +5,7 @@ import { BiSolidMicrophone } from "react-icons/bi";
 import { FaPlus } from "react-icons/fa6";
 import { FaRegBell } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
+import { Link } from "react-router";
 
 const Navbar = () => {
   return (
@@ -14,9 +15,11 @@ const Navbar = () => {
         <span className="cursor-pointer">
           <IoIosMenu />
         </span>
-        <span className="text-7xl text-red-700 cursor-pointer">
-          <ImYoutube2 />
-        </span>
+        <Link to="/">
+          <span className="text-7xl text-red-700 cursor-pointer">
+            <ImYoutube2 />
+          </span>
+        </Link>
       </div>
 
       {/* Middle */}
