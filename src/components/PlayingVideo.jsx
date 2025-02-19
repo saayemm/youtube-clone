@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { fetchData } from "../utils/rapidApi.js"
+import { fetchData } from "../utils/rapidApi.js";
 import ReactPlayer from "react-player";
 import { AiOutlineLike } from "react-icons/ai";
 import { abbreviateNumber } from "js-abbreviation-number";
-import SuggestedVideo from "./SuggestedVideo.jsx"
+import SuggestedVideo from "./SuggestedVideo.jsx";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 
 function PlayingVideo() {
@@ -91,8 +91,10 @@ function PlayingVideo() {
             {video?.stats?.comments} <p>Comments</p>
           </div>
         </div>
-        <div className="flex flex-col px-4 py-6 h-[calc(100vh-4.625rem)] pt-24
-        overflow-y-scroll overflow-x-hidden lg:w-[350px] xl:w-[400px]">
+        <div
+          className="flex flex-col px-4 py-6 h-[calc(100vh-4.625rem)] pt-24
+        overflow-y-scroll overflow-x-hidden lg:w-[350px] xl:w-[400px]"
+        >
           {realatedVideo?.contents?.map((item, index) => {
             if (item?.type !== "video") return false;
             return <SuggestedVideo key={index} video={item?.video} />;

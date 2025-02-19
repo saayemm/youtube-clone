@@ -7,13 +7,11 @@ import Loading from "./loader/Loading";
 import { useAuth } from "./context/AuthProvider";
 
 const App = () => {
-  const {loading} = useAuth()
+  const { loading } = useAuth();
   return (
     <div>
       <Navbar />
-      {
-      loading && <Loading/>
-     }
+      {loading && <Loading />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search/:searchQuery" element={<Search />} />

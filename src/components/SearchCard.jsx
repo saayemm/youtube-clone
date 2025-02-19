@@ -2,11 +2,10 @@ import { Link } from "react-router";
 import Time from "../loader/Time";
 import { abbreviateNumber } from "js-abbreviation-number";
 
-const Video = ({ video }) => {
-  console.log(video);
+const SearchCard = ({video}) => {
   return (
-    <div className=" md:rounded-xl hover:rounded-none mb-8">
-      <Link to={`/playVideo/${video?.videoId}`}>
+    <div>
+         <Link to={`/playVideo/${video?.videoId}`}>
         <div>
           <div className="relative">
             <img
@@ -40,7 +39,7 @@ const Video = ({ video }) => {
         </div>
       </Link>
     </div>
-  );
-};
+  )
+}
 
-export default Video;
+export default SearchCard

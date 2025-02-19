@@ -5,9 +5,20 @@ import { BiSolidMicrophone } from "react-icons/bi";
 import { FaPlus } from "react-icons/fa6";
 import { FaRegBell } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [searchQuery, setSearchQuery] = useState("")
+
+  const navigate = useNavigate()
+
+  const searchQueryHandler=(e)=>{
+    if((e?.key==="Enter" || e==="searchButton") && searchQuery?.length>0){
+      navigate(`/search/${searchQuery}`)
+      setSearchQuery("")
+    }
+  }
   return (
     <div className="flex justify-between items-center px-6 py-2 fixed z-999 w-full bg-gray-100">
       {/* Left */}
@@ -32,8 +43,11 @@ const Navbar = () => {
             className="outline-none px-4 rounded-2xl"
             type="text"
             placeholder="Search"
+            onChange={(e)=>setSearchQuery(e.target.value)}
+            onKeyUp={searchQueryHandler}
+            value={searchQuery}
           />
-          <span className="bg-gray-300 flex  py-2 px-3 rounded-r-2xl cursor-pointer">
+          <span onClick={(e)=>searchQueryHandler("searchButton")} className="bg-gray-300 flex  py-2 px-3 rounded-r-2xl cursor-pointer">
             <GoSearch />
           </span>
         </div>
